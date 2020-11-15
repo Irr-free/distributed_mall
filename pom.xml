@@ -21,5 +21,9 @@
         <module>market-member</module>
         <module>market-order</module>
         <module>market-product</module>
+        <module>renren-fast</module>
+        <module>renren-generator</module>
+        <module>market-common</module>
+        <module>market-gateway</module>
     </modules>
 </project>
