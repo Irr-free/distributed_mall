@@ -45,9 +45,15 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
         }).sorted((menu1,menu2) -> {
             return (menu1.getSort() == null? 0 : menu1.getSort()) - (menu2.getSort() == null? 0 : menu2.getSort());
         }).collect(Collectors.toList());
-
         return Level1Menus;
     }
+
+    @Override
+    public void removeMenuByIds(List<Long> asList) {
+        //TODO
+        baseMapper.deleteBatchIds(asList);
+    }
+
     private List<CategoryEntity> getChildren(CategoryEntity cur, List<CategoryEntity> all) {
         List<CategoryEntity> children = all.stream().filter(categoryEntity -> {
             return categoryEntity.getParentCid() == cur.getCatId();
